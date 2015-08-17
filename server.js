@@ -3,7 +3,7 @@
 var app = require('./app');
 var http = require('http');
 var j5 = require('./services/j5');
-var port = normalizePort(process.env.PORT || '80');
+var port = normalizePort(process.env.PORT || '1337');
 app.set('port', port);
 
 function _init() {
@@ -13,7 +13,7 @@ function _init() {
 	};
 
 	j5.init(opts, function (err, res) {
-
+		j5.message("Test Message",1,0)
 	});
 }
 

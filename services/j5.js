@@ -107,10 +107,6 @@ function _lcd() {
 
 	lcd.clear();
 	lcd.home();
-
-	this.repl.inject({
-		lcd: lcd
-	});
 }
 
 /**
@@ -158,6 +154,11 @@ j5.prototype.init = function (opts, cb) {
 	try {
 		board.on("ready", function () {
 			_init();
+
+			this.repl.inject({
+				lcd: lcd
+			});
+
 			cb(null);
 		});
 	}
