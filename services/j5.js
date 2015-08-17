@@ -3,6 +3,7 @@
  */
 
 var five = require("johnny-five");
+
 var board = {};
 var lcd = {};
 var rly1 = {};
@@ -105,12 +106,7 @@ function _lcd() {
 	});
 
 	lcd.clear();
-	lcd.cursor(1, 0).print("Starting System");
-
-	setTimeout(function () {
-		lcd.home();
-		lcd.print("WELCOME");
-	}, 1000);
+	lcd.home();
 
 	this.repl.inject({
 		lcd: lcd
